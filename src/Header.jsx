@@ -1,5 +1,5 @@
-// Header Component
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom"; // Import NavLink
 
 const Header = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -9,12 +9,12 @@ const Header = ({ onSearch }) => {
   };
 
   const handleSearchClick = () => {
-    onSearch(searchTerm);
+    onSearch(searchTerm); // Trigger search
   };
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      onSearch(searchTerm);
+      onSearch(searchTerm); // Trigger search when Enter key is pressed
     }
   };
 
@@ -22,7 +22,7 @@ const Header = ({ onSearch }) => {
     <div className="h-[6rem] w-full flex justify-between items-center py-2">
       <img
         src="https://www.gameskinny.com/wp-content/uploads/gameskinnyc/a/6/0/a6078c-2fd9033b2be04c9b947d1aac6cdaef60-a2551.gif"
-        alt=""
+        alt="Logo"
         className="h-[3rem] sm:h-[4rem] ml-4 cursor-pointer"
       />
       <div className="flex justify-center items-center relative w-full sm:w-auto">
@@ -43,7 +43,15 @@ const Header = ({ onSearch }) => {
       </div>
       <nav className="mr-3.5">
         <ul className="flex justify-between items-center gap-3">
-          <li className="cursor-pointer">Home</li>
+          <li>
+            <NavLink
+              to="/"
+              className="cursor-pointer"
+              activeClassName="text-blue-700" // This will apply styles when the link is active
+            >
+              Home
+            </NavLink>
+          </li>
           <li className="cursor-pointer">About</li>
           <li className="cursor-pointer">Contact</li>
         </ul>

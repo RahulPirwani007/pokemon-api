@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Hero from "./components/Hero";
+import Favorites from "./components/Favorites";
+import { FavoritesProvider } from "./context/FavoritesContext";
 import Header from "./Header";
-import Hero from "./Hero";
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -10,10 +13,15 @@ const App = () => {
   };
 
   return (
-    <div>
-      <Header onSearch={handleSearch} />
-      <Hero searchQuery={searchQuery} />
-    </div>
+    <FavoritesProvider>
+      <Router>
+        <Header onSearch={handleSearch} />
+        <Routes>
+          <Route path="/" element={<Hero searchQuery={searchQuery} />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </Router>
+    </FavoritesProvider>
   );
 };
 

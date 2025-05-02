@@ -1,1 +1,128 @@
 @import "tailwindcss";
+
+.checkbox-wrapper:hover .check {
+    stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper {
+    position: relative;
+    display: ruby;
+    width: 40px;
+    height: 40px;
+}
+
+.checkbox-wrapper .background {
+    fill: rgb(75, 50, 121);
+    transition: ease all 0.6s;
+    -webkit-transition: ease all 0.6s;
+}
+
+.checkbox-wrapper .stroke {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
+    transition: ease all 0.6s;
+    -webkit-transition: ease all 0.6s;
+}
+
+.checkbox-wrapper .check {
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    stroke-dashoffset: 22;
+    stroke-dasharray: 22;
+    transition: ease all 0.6s;
+    -webkit-transition: ease all 0.6s;
+}
+
+.checkbox-wrapper input[type=checkbox] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    opacity: 0;
+    -appearance: none;
+    -webkit-appearance: none;
+}
+
+.checkbox-wrapper input[type=checkbox]:hover {
+    cursor: pointer;
+}
+
+.checkbox-wrapper input[type=checkbox]:checked+svg .background {
+    fill: #421c64;
+}
+
+.checkbox-wrapper input[type=checkbox]:checked+svg .stroke {
+    stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper input[type=checkbox]:checked+svg .check {
+    stroke-dashoffset: 0;
+}
+
+/* For small mobile devices: 320px - 480px */
+@media (min-width: 320px) and (max-width: 480px) {
+    .card {
+        padding: 1rem;
+        border-radius: 1.5rem;
+    }
+
+    .grid-cols-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .text-6xl {
+        font-size: 2rem !important;
+    }
+
+    .w-1/4 {
+        width: 100% !important;
+    }
+
+    .w-3/4 {
+        width: 100% !important;
+    }
+
+    .h-screen {
+        height: auto !important;
+    }
+
+    .min-h-\[42rem\] {
+        min-height: auto !important;
+    }
+}
+
+/* For tablets and small devices: 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .text-6xl {
+        font-size: 2.5rem !important;
+    }
+
+    .w-1/4 {
+        width: 100% !important;
+    }
+
+    .w-3/4 {
+        width: 100% !important;
+    }
+
+    .h-screen {
+        height: auto !important;
+    }
+
+    .min-h-\[42rem\] {
+        min-height: auto !important;
+    }
+}
