@@ -17,7 +17,9 @@ A real-time Pokémon search application built with React and the Pokémon API (P
 
 ## 🖼️ Screenshots
 
-![🏠 Homepage](public/Screenshot%202025-04-28%20200036.png)
-![🏠 Homepage](public/Screenshot%202025-04-28%20200058.png)
-![Search](public/Screenshot%202025-04-28%20200347.png)
-![Search](public/Screenshot%202025-04-28%20200250.png)
+![🏠 Homepage](public/home.png)
+![🏠 Homepage](public/home%202.png)
+![Favorite](public/Favorite.png)
+![Search](public/search.png)
+![atoz](public/a%20to%20z.png)
+![type](public/type.png)
